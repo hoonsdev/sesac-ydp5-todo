@@ -37,7 +37,7 @@ function App() {
   return (
     <div className="App">
       <AddTodo addItem={addItem} />
-      {todoItems.map((item, idx) => {
+      {todoItems.map((item) => {
         return <Todo key={item.id} item={item} deleteItem={deleteItem} />;
       })}
     </div>
