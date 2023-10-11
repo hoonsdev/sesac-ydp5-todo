@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Todo from './components/Todo';
+import AddTodo from './components/AddTodo';
 
 function App() {
   const [todoItems, setTodoItems] = useState([
@@ -24,9 +25,14 @@ function App() {
       done: true,
     },
   ]);
+  const addItem = (newItem) => {
+    newItem.id = todoItems.length + 1;
+    newItem.done = false;
+    setTodoItems([...todoItems, newItem]);
+  };
   return (
     <div className="App">
-      todo
+      <AddTodo addItem={addItem} />
       {todoItems.map((item) => {
         return <Todo key={item.id} item={item} />;
       })}
