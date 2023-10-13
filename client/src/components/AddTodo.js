@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import '../styles/AddTodo.scss';
 
 export default function AddTodo({ addItem }) {
   const [todoItem, setTodoItem] = useState({
@@ -9,7 +10,7 @@ export default function AddTodo({ addItem }) {
     setTodoItem({ title: '' });
   };
   return (
-    <div className="AddTodo">
+    <div className="addTodo">
       <input
         type="text"
         placeholder="Add your new todo"

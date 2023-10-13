@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react';
 import Todo from './components/Todo';
 import AddTodo from './components/AddTodo';
 import axios from 'axios';
+import TodoCount from './components/TodoCount';
+import './styles/App.scss';
 
 function App() {
   // console.log(process.env.REACT_APP_DB_HOST);
@@ -39,17 +41,23 @@ function App() {
   };
   return (
     <div className="App">
-      <AddTodo addItem={addItem} />
-      {todoItems.map((item) => {
-        return (
-          <Todo
-            key={item.id}
-            item={item}
-            deleteItem={deleteItem}
-            updateItem={updateItem}
-          />
-        );
-      })}
+      <header>
+        <h1>Todo</h1>
+        <TodoCount count={todoItems.length} />
+      </header>
+      <main>
+        <AddTodo addItem={addItem} />
+        {todoItems.map((item) => {
+          return (
+            <Todo
+              key={item.id}
+              item={item}
+              deleteItem={deleteItem}
+              updateItem={updateItem}
+            />
+          );
+        })}
+      </main>
     </div>
   );
 }

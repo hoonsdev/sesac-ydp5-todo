@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import '../styles/Todo.scss';
+import { RiDeleteBin6Line } from 'react-icons/ri';
 
 export default function Todo({ item, deleteItem, updateItem }) {
   const [todoItem, setTodoItem] = useState(item);
@@ -47,8 +49,9 @@ export default function Todo({ item, deleteItem, updateItem }) {
   };
 
   return (
-    <div>
+    <div className="todo">
       <input
+        className="checkbox"
         type="checkbox"
         name={`todo${id}`}
         id={`todo${id}`}
@@ -57,6 +60,7 @@ export default function Todo({ item, deleteItem, updateItem }) {
       />
       {/* <label htmlFor={`todo${id}`}>{title}</label> */}
       <input
+        className="text"
         type="text"
         value={title}
         readOnly={readOnly}
@@ -64,7 +68,9 @@ export default function Todo({ item, deleteItem, updateItem }) {
         onChange={editEventHandler}
         onKeyDown={editKeyEventHandler}
       />
-      <button onClick={onDeleteButtonClick}>DELETE</button>
+      <button onClick={onDeleteButtonClick}>
+        <RiDeleteBin6Line />
+      </button>
     </div>
   );
 }

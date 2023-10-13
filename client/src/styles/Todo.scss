@@ -1,0 +1,38 @@
+@import './variables';
+
+.todo {
+  width: 100%;
+  // border: 1px solid blue;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  padding: 20px;
+
+  input.text {
+    width: 80%;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 0 0 0 10px;
+    font-size: $text-size;
+  }
+
+  input.text:focus {
+    outline: none;
+  }
+
+  input.checkbox {
+    width: $text-size;
+    height: $text-size;
+  }
+
+  button {
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+    padding: 0;
+    overflow: visible;
+    cursor: pointer;
+    background-color: transparent;
+    font-size: $text-size;
+  }
+}

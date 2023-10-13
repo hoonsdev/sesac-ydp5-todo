@@ -1,0 +1,28 @@
+@import './variables';
+
+.App {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  header {
+    width: 75%;
+    text-align: center;
+    background-color: #d1eacd;
+    border-radius: 10px;
+    margin-bottom: 20px;
+
+    .todoCount {
+      margin-bottom: 20px;
+    }
+  }
+
+  main {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 30px;
+  }
+}
