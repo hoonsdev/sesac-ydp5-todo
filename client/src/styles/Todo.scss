@@ -1,38 +1,49 @@
 @import './variables';
+@import './utils';
 
 .todo {
-  width: 100%;
+  width: 80%;
   // border: 1px solid blue;
   display: flex;
   justify-content: space-between;
-  margin-bottom: 20px;
-  padding: 20px;
+  margin-bottom: 10px;
+  // padding: 20px;
 
   input.text {
-    width: 80%;
+    width: 60%;
     border: none;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    padding: 0 0 0 10px;
+    padding: 0 0 10px 10px;
     font-size: $text-size;
   }
 
   input.text:focus {
     outline: none;
+    border-bottom: 1px solid rgba(124, 200, 136, 0.881);
   }
 
   input.checkbox {
+    display: none;
+  }
+
+  label {
+    display: flex;
     width: $text-size;
     height: $text-size;
+    border: 2px solid gray;
+    cursor: pointer;
+  }
+
+  input.checkbox:checked + label::after {
+    content: '✔';
+    width: $text-size;
+    height: $text-size;
+    font-size: 20px;
+    text-align: center;
+    background-color: white;
   }
 
   button {
-    border: none;
-    box-shadow: none;
-    border-radius: 0;
-    padding: 0;
-    overflow: visible;
-    cursor: pointer;
-    background-color: transparent;
-    font-size: $text-size;
+    @include btn;
   }
 }

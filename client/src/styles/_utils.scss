@@ -1,0 +1,12 @@
+@import './variables';
+
+@mixin btn {
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+  padding: 0;
+  overflow: visible;
+  cursor: pointer;
+  background-color: transparent;
+  font-size: $text-size;
+}

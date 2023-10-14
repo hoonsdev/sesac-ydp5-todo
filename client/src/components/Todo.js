@@ -58,6 +58,8 @@ export default function Todo({ item, deleteItem, updateItem }) {
         defaultChecked={done}
         onChange={checkboxEventHandler}
       />
+      <label htmlFor={`todo${id}`}></label>
+
       {/* <label htmlFor={`todo${id}`}>{title}</label> */}
       <input
         className="text"
